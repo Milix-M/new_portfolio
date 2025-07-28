@@ -1,0 +1,54 @@
+---
+interface Props {
+    projectName: string;
+    projectDescription: string;
+    projectImage: string;
+    projectLink: string;
+    technologies: string[];
+}
+
+const {
+    projectName,
+    projectDescription,
+    projectImage,
+    projectLink,
+    technologies,
+} = Astro.props;
+---
+
+<div class="work-item flex flex-col md:flex-row items-start gap-6">
+    <div class="md:w-1/3 w-full">
+        <a
+            href={projectLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block group"
+        >
+            <img
+                src={projectImage}
+                class="w-full rounded-lg border border-gray-200 group-hover:opacity-80 transition-opacity"
+            />
+        </a>
+    </div>
+    <div class="md:w-2/3 w-full">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="group">
+            <h3
+                class="text-xl font-bold group-hover:text-blue-600 transition-colors"
+            >
+                {projectName}
+            </h3>
+        </a>
+        <p class="text-gray-600 mt-2 mb-3">
+            {projectDescription}
+        </p>
+        <div class="flex flex-wrap gap-2">
+            {
+                technologies.map((tech) => (
+                    <span class="bg-gray-200 text-gray-700 text-xs font-medium px-2.5 py-1 rounded">
+                        {tech}
+                    </span>
+                ))
+            }
+        </div>
+    </div>
+</div>
