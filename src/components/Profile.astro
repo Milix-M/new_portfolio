@@ -1,0 +1,148 @@
+---
+import { SiZenn } from "react-icons/si";
+import { BsTwitterX } from "react-icons/bs";
+import { FaGithub } from "react-icons/fa";
+import Career from "./Career.astro";
+import Works from "./Works.astro";
+
+const myName = "Milix-M";
+const myRole = "バックエンド・インフラエンジニア";
+---
+
+<!-- ===== コンテンツコンテナ ===== -->
+<div class="max-w-3xl mx-auto px-6 py-12 md:py-20">
+    <!-- ===== ヘッダー情報 ===== -->
+    <header class="mb-16 flex items-center space-x-6">
+        <img
+            src="https://pbs.twimg.com/profile_images/1764926813816651776/n9jam86p_400x400.jpg"
+            alt="アイコン画像"
+            class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-gray-300"
+        />
+        <div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
+                {myName}
+            </h1>
+            <p class="text-lg text-gray-600 mt-1">{myRole}</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== Aboutセクション ===== -->
+        <section id="about" class="mb-16">
+            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
+                About
+            </h2>
+            <div
+                id="about-content"
+                class="text-base text-gray-700 leading-relaxed space-y-4"
+            >
+                <p>
+                    2024年4月から現在まで名古屋のシステム開発会社に勤務。<br />
+                    バックエンド・インフラエンジニアとしてJavaのSpringを使用したマイクロサービス開発やCPUのメモリ暗号化機能・OpenStack・KVMを使用したインフラ構築業務を担当。<br
+                    />
+                    現在はPython・PyTorch・Llamaを使用した映像解析AIの開発案件に上流工程から携わる。
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== Careerセクション ===== -->
+        <section id="career" class="mb-16">
+            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
+                Career
+            </h2>
+            <div class="space-y-6">
+                <Career
+                    startDate="2024年4月"
+                    endDate="現在"
+                    company="中小SES企業"
+                    position="バックエンド・インフラエンジニア"
+                    description="Java+Springのマイクロサービス開発やKubernetes,OpenStack,Linuxを使用したクラウドの検討・研究・構築、Pythonを使用したAI学習基盤システムの開発に従事。"
+                />
+            </div>
+        </section>
+
+        <!-- ===== Certificationsセクション ===== -->
+        <section id="certifications" class="mb-16">
+            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
+                Certifications
+            </h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>
+                    Oracle Certified Java Programmer, Silver SE 11
+                    (2024年5月取得)
+                </li>
+                <li>
+                    Oracle Certified Java Programmer, Gold SE 11 (2024年8月取得)
+                </li>
+                <li>AWS Certified Cloud Practitioner (2024年4月取得)</li>
+            </ul>
+        </section>
+
+        <!-- ===== Worksセクション ===== -->
+        <section id="works" class="mb-16">
+            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-8">
+                Works
+            </h2>
+
+            <!-- 作品リスト -->
+            <div class="space-y-12">
+                <Works
+                    projectName="Passgen"
+                    projectDescription="数クリックで簡単に安全なパスワードが生成できるChrome拡張機能です。"
+                    projectImage="https://placehold.co/800x500/e9ecef/495057?text=Passgen"
+                    projectLink="https://chromewebstore.google.com/detail/passgen-a-simple-password/jibdlcehfeapakbemeombfeophiahmcg"
+                    technologies={["React", "MUI", "TypeScript"]}
+                />
+
+                <Works
+                    projectName="Authenticator"
+                    projectDescription="ブラウザ上で簡単に二段階認証のコードを生成することができるChrome拡張機能です。"
+                    projectImage="https://placehold.co/800x500/e9ecef/495057?text=Authenticator"
+                    projectLink="https://chromewebstore.google.com/detail/authenticator/biblcaincgpfkamhjigfmdpdmbdeojcp"
+                    technologies={["React", "daisyUI(tailwind)", "TypeScript"]}
+                />
+
+                <Works
+                    projectName="Misskey Server"
+                    projectDescription="OCI上にVMサーバを構築、分散型ソーシャルネットワークソフトウェアである「Misskey」を使用し、1年半ほどSNSサービスを運営。"
+                    projectImage="https://placehold.co/800x500/e9ecef/495057?text=Misskey+Server"
+                    projectLink="#"
+                    technologies={["Linux", "Misskey", "PostgreSQL"]}
+                />
+            </div>
+        </section>
+
+        <!-- ===== Contactセクション ===== -->
+        <section id="contact">
+            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
+                Contact
+            </h2>
+            <p class="mb-4 text-gray-700">
+                仕事依頼やご相談は、以下のSNSアカウントへお気軽にご連絡ください。
+            </p>
+            <div class="flex space-x-5 mt-6">
+                <a
+                    href="https://x.com/_milix_m"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-500 hover:text-gray-800 transition-colors"
+                    ><div class="text-2xl"><BsTwitterX /></div></a
+                >
+                <a
+                    href="https://github.com/Milix-M"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-500 hover:text-gray-800 transition-colors"
+                    ><div class="text-2xl"><FaGithub /></div></a
+                >
+                <a
+                    href="https://zenn.dev/milix_m"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-500 hover:text-gray-800 transition-colors"
+                    ><div class="text-2xl"><SiZenn /></div></a
+                >
+            </div>
+        </section>
+    </main>
+</div>
