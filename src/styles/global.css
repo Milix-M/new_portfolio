@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+/* フォント設定 */
+body {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    background-color: #f8f9fa;
+    /* 少しだけグレーがかった白 */
+    color: #212529;
+}
+
+.work-item+.work-item {
+    margin-top: 4rem;
+}
