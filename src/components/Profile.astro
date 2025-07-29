@@ -1,9 +1,16 @@
 ---
+import { Image } from "astro:assets";
 import { SiSpeakerdeck, SiZenn } from "react-icons/si";
 import { BsTwitterX } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
-import Career from "./Career.astro";
-import Works from "./Works.astro";
+import Career from "./profile/Career.astro";
+import Works from "./profile/Works.astro";
+import Language from "./profile/techStack/Language.astro";
+import Framework from "./profile/techStack/Framework.astro";
+import Database from "./profile/techStack/Database.astro";
+import Cloud from "./profile/techStack/Cloud.astro";
+import Middleware from "./profile/techStack/Middleware.astro";
+import Other from "./profile/techStack/Other.astro";
 
 const myName = "Milix-M";
 const myRole = "バックエンド・インフラエンジニア";
@@ -13,10 +20,12 @@ const myRole = "バックエンド・インフラエンジニア";
 <div class="max-w-3xl mx-auto px-6 py-12 md:py-20">
     <!-- ===== ヘッダー情報 ===== -->
     <header class="mb-16 flex items-center space-x-6">
-        <img
+        <Image
             src="https://pbs.twimg.com/profile_images/1764926813816651776/n9jam86p_400x400.jpg"
             alt="アイコン画像"
             class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-gray-300"
+            inferSize
+            priority
         />
         <div>
             <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
@@ -42,6 +51,39 @@ const myRole = "バックエンド・インフラエンジニア";
                     />
                     現在はPython・PyTorch・Llamaを使用した映像解析AIの開発案件に上流工程から携わる。
                 </p>
+            </div>
+        </section>
+
+        <!-- ===== Tech Stackセクション ===== -->
+        <section id="tech-stack" class="mb-16">
+            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
+                Tech Stack
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+                <div>
+                    <h4 class="font-bold text-lg mb-3">Language</h4>
+                    <Language />
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-3">Framework</h4>
+                    <Framework />
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-3">DataBase</h4>
+                    <Database />
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-3">Cloud</h4>
+                    <Cloud />
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-3">Middleware</h4>
+                    <Middleware />
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-3">Other</h4>
+                    <Other />
+                </div>
             </div>
         </section>
 
@@ -74,7 +116,7 @@ const myRole = "バックエンド・インフラエンジニア";
                 <li>
                     Oracle Certified Java Programmer, Gold SE 11 (2024年8月取得)
                 </li>
-                <li>AWS Certified Cloud Practitioner (2024年4月取得)</li>
+                <li>AWS Certified Cloud Practitioner (2025年4月取得)</li>
             </ul>
         </section>
 
@@ -89,7 +131,7 @@ const myRole = "バックエンド・インフラエンジニア";
                 <Works
                     projectName="Passgen"
                     projectDescription="数クリックで簡単に安全なパスワードが生成できるChrome拡張機能です。"
-                    projectImage="https://placehold.co/800x500/e9ecef/495057?text=Passgen"
+                    projectImage="https://lh3.googleusercontent.com/wTdQWu7PrcUc41HAk4IS_O6_Ux7ZmoMfctWkSG4Aq0DYq-NvIkoglJ_3Cj-DVktCvjCol36K__gZhfAoRURPDTeAuQ=s1280-w1280-h800"
                     projectLink="https://chromewebstore.google.com/detail/passgen-a-simple-password/jibdlcehfeapakbemeombfeophiahmcg"
                     technologies={["React", "MUI", "TypeScript"]}
                 />
@@ -97,7 +139,7 @@ const myRole = "バックエンド・インフラエンジニア";
                 <Works
                     projectName="Authenticator"
                     projectDescription="ブラウザ上で簡単に二段階認証のコードを生成することができるChrome拡張機能です。"
-                    projectImage="https://placehold.co/800x500/e9ecef/495057?text=Authenticator"
+                    projectImage="https://lh3.googleusercontent.com/vZPN1pQIwCSrhvyNGkfKXMLMnUXTa9auBITn3FP5ZFE50tIcBxi41L4H659L0yVppsOc_1Q7PPGrbehYAOARcKGd=s1280-w1280-h800"
                     projectLink="https://chromewebstore.google.com/detail/authenticator/biblcaincgpfkamhjigfmdpdmbdeojcp"
                     technologies={["React", "daisyUI(tailwind)", "TypeScript"]}
                 />
@@ -105,8 +147,8 @@ const myRole = "バックエンド・インフラエンジニア";
                 <Works
                     projectName="Misskey Server"
                     projectDescription="OCI上にVMサーバを構築、分散型ソーシャルネットワークソフトウェアである「Misskey」を使用し、1年半ほどSNSサービスを運営。"
-                    projectImage="https://placehold.co/800x500/e9ecef/495057?text=Misskey+Server"
-                    projectLink="#"
+                    projectImage="https://misskey-hub.net/img/historical-materials/2024/acbedd05d6ef418498c6b9467dd0fe6c.webp"
+                    projectLink="https://misskey-hub.net/ja/"
                     technologies={["Linux", "Misskey", "PostgreSQL"]}
                 />
             </div>
@@ -126,13 +168,14 @@ const myRole = "バックエンド・インフラエンジニア";
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-gray-500 hover:text-gray-800 transition-colors"
-                    ><div class="text-2xl"><BsTwitterX /></div></a
+                    aria-label="X"><div class="text-2xl"><BsTwitterX /></div></a
                 >
                 <a
                     href="https://github.com/Milix-M"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-gray-500 hover:text-gray-800 transition-colors"
+                    aria-label="GitHub"
                     ><div class="text-2xl"><FaGithub /></div></a
                 >
                 <a
@@ -140,13 +183,14 @@ const myRole = "バックエンド・インフラエンジニア";
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-gray-500 hover:text-gray-800 transition-colors"
-                    ><div class="text-2xl"><SiZenn /></div></a
+                    aria-label="Zenn"><div class="text-2xl"><SiZenn /></div></a
                 >
                 <a
                     href="https://speakerdeck.com/milix_m"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-gray-500 hover:text-gray-800 transition-colors"
+                    aria-label="Speaker Deck"
                     ><div class="text-2xl"><SiSpeakerdeck /></div></a
                 >
             </div>
