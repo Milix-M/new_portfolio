@@ -5,6 +5,12 @@ import { BsTwitterX } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import Career from "./profile/Career.astro";
 import Works from "./profile/Works.astro";
+import Language from "./profile/techStack/Language.astro";
+import Framework from "./profile/techStack/Framework.astro";
+import Database from "./profile/techStack/Database.astro";
+import Cloud from "./profile/techStack/Cloud.astro";
+import Middleware from "./profile/techStack/Middleware.astro";
+import Other from "./profile/techStack/Other.astro";
 
 const myName = "Milix-M";
 const myRole = "バックエンド・インフラエンジニア";
@@ -45,6 +51,39 @@ const myRole = "バックエンド・インフラエンジニア";
                     />
                     現在はPython・PyTorch・Llamaを使用した映像解析AIの開発案件に上流工程から携わる。
                 </p>
+            </div>
+        </section>
+
+        <!-- ===== Tech Stackセクション ===== -->
+        <section id="tech-stack" class="mb-16">
+            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
+                Tech Stack
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+                <div>
+                    <h4 class="font-bold text-lg mb-3">Language</h4>
+                    <Language />
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-3">Framework</h4>
+                    <Framework />
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-3">DataBase</h4>
+                    <Database />
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-3">Cloud</h4>
+                    <Cloud />
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-3">Middleware</h4>
+                    <Middleware />
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-3">Other</h4>
+                    <Other />
+                </div>
             </div>
         </section>
 
@@ -129,8 +168,7 @@ const myRole = "バックエンド・インフラエンジニア";
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-gray-500 hover:text-gray-800 transition-colors"
-                    aria-label="X"
-                    ><div class="text-2xl"><BsTwitterX /></div></a
+                    aria-label="X"><div class="text-2xl"><BsTwitterX /></div></a
                 >
                 <a
                     href="https://github.com/Milix-M"
@@ -145,8 +183,7 @@ const myRole = "バックエンド・インフラエンジニア";
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-gray-500 hover:text-gray-800 transition-colors"
-                    aria-label="Zenn"
-                    ><div class="text-2xl"><SiZenn /></div></a
+                    aria-label="Zenn"><div class="text-2xl"><SiZenn /></div></a
                 >
                 <a
                     href="https://speakerdeck.com/milix_m"
