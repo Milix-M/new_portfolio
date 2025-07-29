@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 interface Props {
     projectName: string;
     projectDescription: string;
@@ -24,9 +26,11 @@ const {
             rel="noopener noreferrer"
             class="block group"
         >
-            <img
+            <Image
                 src={projectImage}
                 class="w-full rounded-lg border border-gray-200 group-hover:opacity-80 transition-opacity"
+                alt={projectName}
+                inferSize
             />
         </a>
     </div>
