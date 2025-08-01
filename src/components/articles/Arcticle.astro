@@ -1,0 +1,23 @@
+---
+interface Props {
+    date: string;
+    slug: string;
+    title: string;
+}
+
+const { date, slug, title } = Astro.props;
+---
+
+<div class="flex items-start gap-4">
+    <div class="text-gray-500 text-sm pt-1 whitespace-nowrap">{date}</div>
+    <div class="flex-1">
+        <a
+            href={slug}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-bold text-lg text-gray-800 hover:text-blue-600 transition-colors"
+        >
+            {title}
+        </a>
+    </div>
+</div>
