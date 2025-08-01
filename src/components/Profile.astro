@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import { SiSpeakerdeck, SiZenn } from "react-icons/si";
 import { BsTwitterX } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
-import Career from "./profile/Career.astro";
+import Career from "./careers/Career.astro";
 import Works from "./profile/Works.astro";
 import Language from "./profile/techStack/Language.astro";
 import Framework from "./profile/techStack/Framework.astro";
@@ -11,6 +11,8 @@ import Database from "./profile/techStack/Database.astro";
 import Cloud from "./profile/techStack/Cloud.astro";
 import Middleware from "./profile/techStack/Middleware.astro";
 import Other from "./profile/techStack/Other.astro";
+import LastArticles from "./articles/LastArticles.astro";
+import Careers from "./careers/Careers.astro";
 
 const myName = "Milix-M";
 const myRole = "バックエンド・インフラエンジニア";
@@ -92,15 +94,7 @@ const myRole = "バックエンド・インフラエンジニア";
             <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
                 Career
             </h2>
-            <div class="space-y-6">
-                <Career
-                    startDate="2024年4月"
-                    endDate="現在"
-                    company="中小SES企業"
-                    position="バックエンド・インフラエンジニア"
-                    description="Java+Springのマイクロサービス開発やKubernetes,OpenStack,Linuxを使用したクラウドの検討・研究・構築、Pythonを使用したAI学習基盤システムの開発に従事。"
-                />
-            </div>
+            <Careers />
         </section>
 
         <!-- ===== Certificationsセクション ===== -->
@@ -151,6 +145,24 @@ const myRole = "バックエンド・インフラエンジニア";
                     projectLink="https://misskey-hub.net/ja/"
                     technologies={["Linux", "Misskey", "PostgreSQL"]}
                 />
+            </div>
+        </section>
+
+        <!-- ===== Latest Articlesセクション ===== -->
+        <section id="latest-articles" class="mb-16">
+            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-8">
+                Latest Articles
+            </h2>
+            <LastArticles />
+            <div class="text-right mt-6">
+                <a
+                    href="https://zenn.dev/milix_m"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-600 hover:text-black hover:underline font-medium transition-colors"
+                >
+                    Zennで他の記事も見る &rarr;
+                </a>
             </div>
         </section>
 
