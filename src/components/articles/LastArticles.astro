@@ -1,0 +1,14 @@
+---
+import { getZennRssFeed } from "../../lib/zenn";
+import Article from "./Arcticle.astro";
+
+const posts = await getZennRssFeed();
+---
+
+<div class="space-y-6">
+    {
+        posts.map((post) => (
+            <Article date={post.date} slug={post.slug} title={post.title} />
+        ))
+    }
+</div>
