@@ -11,6 +11,7 @@ import Database from "./profile/techStack/Database.astro";
 import Cloud from "./profile/techStack/Cloud.astro";
 import Middleware from "./profile/techStack/Middleware.astro";
 import Other from "./profile/techStack/Other.astro";
+import LastArticles from "./articles/LastArticles.astro";
 
 const myName = "Milix-M";
 const myRole = "バックエンド・インフラエンジニア";
@@ -151,6 +152,24 @@ const myRole = "バックエンド・インフラエンジニア";
                     projectLink="https://misskey-hub.net/ja/"
                     technologies={["Linux", "Misskey", "PostgreSQL"]}
                 />
+            </div>
+        </section>
+
+        <!-- ===== Latest Articlesセクション ===== -->
+        <section id="latest-articles" class="mb-16">
+            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-8">
+                Latest Articles
+            </h2>
+            <LastArticles />
+            <div class="text-right mt-6">
+                <a
+                    href="https://zenn.dev/milix_m"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-600 hover:text-black hover:underline font-medium transition-colors"
+                >
+                    Zennで他の記事も見る &rarr;
+                </a>
             </div>
         </section>
 
