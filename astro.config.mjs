@@ -17,5 +17,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [react(), partytown(), partytown({ config: { forward: ['dataLayer.push'] } })],
+  integrations: [react(), partytown({ config: { forward: ['dataLayer.push'] } })],
 });
