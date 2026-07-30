@@ -10,6 +10,14 @@ import partytown from '@astrojs/partytown';
 // https://astro.build/config
 export default defineConfig({
   site: 'http://profile.milix-m.com',
+  image: {
+    remotePatterns: [
+      { protocol: 'https', hostname: 'pbs.twimg.com' },
+      { protocol: 'https', hostname: 'lh3.googleusercontent.com' },
+      { protocol: 'https', hostname: 'misskey-hub.net' },
+      { protocol: 'https', hostname: 'placehold.co' },
+    ],
+  },
   vite: {
     ssr: {
       noExternal: ['react-icons']
