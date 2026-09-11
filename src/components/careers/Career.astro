@@ -12,9 +12,8 @@ const { startDate, endDate, company, position, descriptions } = Astro.props;
 
 <div>
     <p class="text-sm text-gray-500">{startDate} ~ {endDate}</p>
-    <h3 class="font-bold mt-1 text-gray-800">
-        {company} - {position}
-    </h3>
+    <h3 class="font-bold mt-1 text-gray-800">{company}</h3>
+    {position && <p class="text-sm text-gray-500">{position}</p>}
     {
         descriptions && (
             // Certificationsのリストはspace-y-2だが、一つの塊であることと、読みやすさを両立しspace-y-1.5としている
