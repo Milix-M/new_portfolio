@@ -11,7 +11,8 @@ interface Post {
 
 export const getZennRssFeed = async (): Promise<Post[]> => {
     const parser = new Parser();
-    const feed = await parser.parseURL('https://zenn.dev/' + MY_ZENN_USERNAME + '/feed?all=1');
+    // ZennのRSSはCDNで最大2時間キャッシュされるため、時刻のクエリを付けて毎回最新を取得する
+    const feed = await parser.parseURL('https://zenn.dev/' + MY_ZENN_USERNAME + '/feed?all=1&t=' + Date.now());
 
     const posts: Post[] = feed.items.slice(0, 3).map(item => ({
         title: item.title ?? '',

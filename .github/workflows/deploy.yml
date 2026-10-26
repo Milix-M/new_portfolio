@@ -5,7 +5,8 @@ on:
     branches: [ main ]
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
+    # Zennの新着記事を反映するため毎時ビルドする（毎時0分は混雑しやすいので17分にずらす）
+    - cron: '17 * * * *'
 
 permissions:
   contents: read
